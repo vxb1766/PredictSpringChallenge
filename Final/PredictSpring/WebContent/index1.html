@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Challenge</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row col-md-12 well well-lg actionArea">
+			<button href="" class="btn-show-modal btn btn-default"><i class="fa fa-floppy-o"></i></span> Save</button>
+			<button class="btn btn-warning" id="load"><i class="fa fa-repeat"></i> Load</button>
+			<select id="loadLayouts" class="hideLoadOption"></select>
+			<div class="splitChoice">
+				<button class="btn btn-default" id="addNewLayoutCell"><i class="fa fa-plus-circle"></i> New Layout Cell</button>
+				<button class="btn btn-primary" id="horizontal"><i class="fa fa-arrows-h"></i> Horizontal</button>
+				<button class="btn btn-success" id="vertical"><i class="fa fa-arrows-v"></i> Vertical</button>
+			</div>
+		</div><!-- End Of Action Area -->
+		<div class="row col-md-12">
+			<div class="well well-lg col-md-2 palletArea">
+				<div class="col-md-1">
+					<div class="row palletCell" draggable = "true"><img class="palletCellImage" src="http://api.randomuser.me/portraits/women/55.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage" src="http://api.randomuser.me/portraits/men/54.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage" src="http://api.randomuser.me/portraits/women/53.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage" src="http://api.randomuser.me/portraits/men/52.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage"src="http://api.randomuser.me/portraits/women/51.jpg"></div>
+				</div>
+
+			</div>
+			
+			<div class="well well-lg col-md-9 layoutArea">
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+
+				<!-- <div class="input-group parent">
+					<div class="child">
+						<span class="input-group-addon">     
+							<input type="checkbox">     
+						</span>
+						<div class="row input-group-addon">
+							<div class="layoutCell" draggable = "true"><img src="http://api.randomuser.me/portraits/women/51.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="child">
+						<span class="input-group-addon">     
+							<input type="checkbox">     
+						</span>
+						<div class="row input-group-addon">
+							<div class="layoutCell" draggable = "true"><img src="http://api.randomuser.me/portraits/women/51.jpg">
+							</div>
+						</div>
+					</div>
+					<div style="clear: both"></div>
+				</div> -->
+
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div><!-- End of Pallet & Layout Parent Div -->
+	</div>
+
+	<!-- Modal For Save -->
+	<!-- About Us Modal -->
+	<div class="container">
+		<div class="modal fade" id="modal-example"> 
+			<div class="modal-content"> 
+				<div class="modal-display"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">x</button>
+						<h3>Save Layout</h3>
+					</div>
+					<div class="modal-body">
+						<p><input type="text" class="span3" name="saveAs" id="saveAs" placeholder="Save as what?" required></p>
+						<p><button type="submit" class="btn btn-primary" id="saveButton">Save</button></p>
+					</div>
+					<div class="modal-footer"> 
+						<a id="closeButtonModal-modal-example" href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- End Of About Us Modal -->
+
+	<!-- Success Modal -->
+	<div class="container">
+		<div class="modal fade" id="Success-Modal"> 
+			<div class="modal-display"> 
+				<div class="modal-content"> 
+
+					<div class="modal-body">
+						<span class="glyphicon glyphicon-remove" data-dismiss="modal"> </span> 
+						<h3><i class="fa fa-thumbs-up fa-5x greenThumbsUp"></i> Layout Saved</h3>
+					</div>
+				</div>			
+			</div>	
+		</div>	
+		<!-- End Of Success Modal -->
+
+		<!-- Error Modal -->
+		<div class="container">
+			<div class="modal fade" id="Error-Modal"> 
+				<div class="modal-display"> 
+					<div class="modal-content"> 
+
+						<div class="modal-body">
+							<span class="glyphicon glyphicon-remove" data-dismiss="modal"> </span> 
+							<h3><i class="fa fa-thumbs-down fa-5x redThumbsDown"></i> Oops Something Went Wrong !</h3>
+						</div>
+					</div>			
+				</div>	
+			</div>	
+			<!-- End Of Success Modal -->
+
+
+
+			<script src="js/jquery-1.8.2.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/index.js"></script>
+		</body>
+		</html>

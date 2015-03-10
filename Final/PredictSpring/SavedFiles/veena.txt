@@ -1,0 +1,20 @@
+
+				<table class="col-md-9">
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="test layoutCell" style="2px solid black;" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img class="layoutCellImage" src="http://api.randomuser.me/portraits/men/52.jpg"></div></td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" style="2px solid black;" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div></td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" style="2px solid black;" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div></td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" style="2px solid black;" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div></td>
+						</tr>
+					</tbody>
+				</table>
+			
