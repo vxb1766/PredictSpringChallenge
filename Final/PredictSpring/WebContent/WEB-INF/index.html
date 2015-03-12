@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Challenge</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row col-md-12 well well-lg actionArea">
+			<button href="" class="btn-show-modal"><span class="glyphicon glyphicon-home"></span> Save</button>
+			<button class="btn btn-warning">Load</button>
+			<select><option>1</option><option>1</option><option>1</option></select>
+			<div class="splitChoice">
+				<button class="btn btn-default" id="addNewLayoutCell">New Layout Cell</button>
+				<button class="btn btn-primary" id="horizontal">Horizontal</button>
+				<button class="btn btn-success" id="vertical">Vertical</button>
+			</div>
+		</div><!-- End Of Action Area -->
+		<div class="row col-md-12">
+			<div class="well well-lg col-md-2 palletArea">
+				<div class="col-md-1">
+					<div class="row palletCell" draggable = "true"><img class="palletCellImage" src="http://api.randomuser.me/portraits/women/55.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage" src="http://api.randomuser.me/portraits/men/54.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage" src="http://api.randomuser.me/portraits/women/53.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage" src="http://api.randomuser.me/portraits/men/52.jpg"></div>
+					<div class="row palletCell" draggable = "true"><img  class="palletCellImage"src="http://api.randomuser.me/portraits/women/51.jpg"></div>
+				</div>
+
+			</div>
+			
+			<div class="well well-lg col-md-9 layoutArea">
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+
+				<!-- <div class="input-group parent">
+					<div class="child">
+						<span class="input-group-addon">     
+							<input type="checkbox">     
+						</span>
+						<div class="row input-group-addon">
+							<div class="layoutCell" draggable = "true"><img src="http://api.randomuser.me/portraits/women/51.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="child">
+						<span class="input-group-addon">     
+							<input type="checkbox">     
+						</span>
+						<div class="row input-group-addon">
+							<div class="layoutCell" draggable = "true"><img src="http://api.randomuser.me/portraits/women/51.jpg">
+							</div>
+						</div>
+					</div>
+					<div style="clear: both"></div>
+				</div> -->
+
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+
+				<div class="input-group">
+					<span class="input-group-addon">     
+						<input type="checkbox">     
+					</span>
+					<div class="row input-group-addon">
+						<div class="layoutCell" draggable = "true"></div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div><!-- End of Pallet & Layout Parent Div -->
+	</div>
+
+	<!-- Modal For Save -->
+	<!-- About Us Modal -->
+	<div class="container">
+	<div class="modal fade" id="modal-example"> 
+		<div class="modal-content"> 
+			<div class="modal-display"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">x</button>
+					<h3>Save Layout</h3>
+				</div>
+				<div class="modal-body">
+					<form method="post" action='' name="login_form">
+						<p><input type="text" class="span3" name="saveAs" id="saveAs" placeholder="Save as what?"></p>
+						<p><button type="submit" class="btn btn-primary" id="saveButton">Save</button></p>
+					</form>
+				</div>
+				<div class="modal-footer"> 
+					<a id="closeButtonModal-modal-example" href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- End Of About Us Modal -->
+
+
+
+
+
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		var dragSource;
+		var dragTarget;
+		$(document).ready(function() {
+			var app = {};
+			app.dragItem = "";
+			app.dragSource = "";
+
+			app.dragTargetBeingReplaced = "";
+			
+			app.dragStart = function(e){
+				var draggedId;
+				console.log("start");
+				var dataTransfer = e.originalEvent.dataTransfer;
+				dataTransfer.effectAllowed = 'copy';
+				dragSource = this;
+				console.log("Source");
+				console.log(dragSource);
+				dragSource.firstElementChild == null ? draggedId =  "" : draggedId = dragSource.firstElementChild.src;
+				dataTransfer.setData('Text', draggedId);
+				
+			}
+			app.dragEnd = function(e){
+				console.log(e.currentTarget)
+				event.preventDefault();
+				event.dataTransfer.dropEffect = 'copy';
+				event.stopPropagation();
+				return false;
+			}
+			
+			app.dragOver = function(e){
+				e.preventDefault();
+			}
+
+			app.dragEnter = function(e){
+				dragTarget = e.currentTarget;
+				console.log("target");
+				console.log(dragTarget);
+				e.preventDefault();
+				return true;
+			}
+
+			app.isChildAbsent = function(){
+				if(this.firstElementChild == null){
+					return true;
+				}
+				return false;
+			}
+
+			app.createImgTag = function(){
+				var img = $('<img>')[0];
+				img.setAttribute('src',null);
+				img.setAttribute('class','layoutCellImage');
+				this.appendChild(img);
+			}
+
+			app.newDrop = function(e){
+				console.log("drop");
+				var event = e.originalEvent;
+				if (event.stopPropagation) {
+					event.stopPropagation();
+				}
+
+				var isDragSourceChildAbsent = false , isDragTargetChildAbsent = false;
+				isDragSourceChildAbsent = app.isChildAbsent.call(dragSource);
+				isDragTargetChildAbsent = app.isChildAbsent.call(dragTarget);
+
+				var dataTransfer = event.dataTransfer;
+				var draggedId = dataTransfer.getData('Text');
+				
+				if(isDragSourceChildAbsent && isDragTargetChildAbsent){
+					console.log("source and target is empty");
+
+				}else{
+					if(isDragTargetChildAbsent){
+						console.log("target child is absent");
+						app.createImgTag.call(dragTarget);
+					}
+					if(isDragSourceChildAbsent){
+						console.log("source child is absent");
+						app.createImgTag.call(dragSource,dragTarget)
+					}
+					if( dragSource.classList.contains('palletCell')){
+						dragTarget.firstElementChild.setAttribute('src',dragSource.firstElementChild.src);
+					}else{
+						//we need to swap the contents
+						var temp = dragTarget.firstElementChild.src;
+						dragTarget.firstElementChild.setAttribute('src',dragSource.firstElementChild.src);
+						dragSource.firstElementChild.setAttribute('src',temp);
+
+						//however if dragSource itself is empty, then src attribute of image will point to index.html
+						//hence remove the src Attribute
+						//but just previously we swapped source with target.
+						//so drop target(which was dropSource before swap) src needs to be removed
+						if(isDragSourceChildAbsent){
+							console.log("remove source");
+							dragTarget.removeChild(dragTarget.children[0]);
+						}
+
+						if(isDragTargetChildAbsent){
+							console.log("remove source");
+							dragSource.removeChild(dragSource.children[0]);
+						}
+
+
+						
+					}
+					
+				}
+
+				
+				/*if(dragTarget.children.length == 0 ){//If the image is not there then create Image tag
+					var img = $('<img>')[0];
+					img.setAttribute('src',draggedId);
+					img.setAttribute('class','layoutCell');
+					dragTarget.appendChild(img);
+					console.log("added");
+
+				}else{
+					temp = draggedId;
+					dragSource.firstElementChild.src = dragTarget.firstElementChild.src;
+					dragTarget.firstElementChild.src = temp;
+				}*/
+				console.log("drop");
+				e.stopPropagation();
+				return false;
+
+			}
+
+			app.drop = function(e){
+				console.log("drop");
+				var event = e.originalEvent;
+				if (event.stopPropagation) {
+					event.stopPropagation();
+				}
+				
+				var parentDiv = e.currentTarget;
+				var dataTransfer = event.dataTransfer;
+				var draggedId = dataTransfer.getData('Text');
+				e.currentTarget.children.length == 1 ? app.dragTargetBeingReplaced = e.currentTarget.firstElementChild.src : app.dragTargetBeingReplaced = "";
+
+				if(parentDiv.children.length == 0 ){//If the image is not there then create Image tag
+					var img = $('<img>')[0];
+					img.setAttribute('src',draggedId);
+					img.setAttribute('class','layoutCell');
+					parentDiv.appendChild(img);
+					console.log("added");
+
+				}else{//Img is already there. So you just need to replace the source
+					//this also means you need to swap the two images.
+
+					parentDiv.children[0].setAttribute('src',draggedId);
+				}
+				
+				console.log("drop");
+				e.stopPropagation();
+				return false;
+
+			}
+
+			app.splitAndAppendImage = function(parentNode , createElement){
+
+			}
+
+			app.horizontalSplit = function(event){
+				$checkedItems = $("input[type=checkbox]:checked").closest('.input-group')
+				$checkedItems.each(function(index , element){
+					console.log($(this));
+					var eachElement = $(this).clone(true);
+					console.log($(eachElement));
+					$('.layoutArea').css('width','40%').css('height','40%').append(eachElement);
+
+				});
+
+
+			}
+
+			app.verticalSplit = function(event){
+
+			}
+
+			app.addLayoutCell = function(event){
+				var newItem = $('.layoutArea :first-child')[0];
+				$(newItem).clone(true).appendTo($('.layoutArea'));
+			}
+
+
+			$('.palletCell').on('dragstart', app.dragStart);
+			$('.layoutCell').on('dragstart', app.dragStart);
+			$('.layoutCell').on('dragenter', app.dragEnter);
+			$('.layoutCell').on('dragover', app.dragOver);
+			$('.layoutCell').on('drop', app.newDrop);
+			$('#horizontal').click(app.horizontalSplit);
+			$('#vertical').click(app.verticalSplit);
+			$('#addNewLayoutCell').click(app.addLayoutCell);
+			$(".btn-show-modal").click(function(e){
+				e.preventDefault();
+				$("#modal-example").modal('show');
+			});
+			$("#saveButton").click(function(event){
+				console.log("test");
+			});
+		});
+
+</script>
+</body>
+</html>

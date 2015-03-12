@@ -1,0 +1,26 @@
+
+				<table class="col-md-9">
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400"><tr style="max-width: 400px; width: 400px; height: 200px;"><td class="test layoutCell" data-width="400" data-height="200" draggable="true" style="width: 400px; height: 200px; max-width: 400px; max-height: 200px;"><div class="imageHolder" style="width: 400px; height: 200px; max-width: 400px; max-height: 200px;"><img style="width: 400px; height: 200px; max-width: 400px; max-height: 200px;"></div>
+							</td></tr><tr style="max-height: 200px; width: 400px; height: 200px;"><td class="test layoutCell" data-width="400" data-height="200" style="width: 400px; height: 200px; max-width: 400px; max-height: 200px;"><tr style="max-width: 400px; width: 400px; height: 100px;"><td class="test layoutCell" data-width="400" data-height="100" draggable="true" style="width: 400px; height: 100px; max-width: 400px; max-height: 100px;"><div class="imageHolder" style="width: 400px; height: 100px; max-width: 400px; max-height: 100px;"><img style="width: 400px; height: 100px; max-width: 400px; max-height: 100px;"></div>
+							</td></tr><tr style="max-height: 100px; width: 400px; height: 100px;"><td class="test layoutCell" data-width="400" data-height="100" draggable="true" style="width: 400px; height: 100px; max-width: 400px; max-height: 100px;"><div class="imageHolder" style="width: 400px; height: 100px; max-width: 400px; max-height: 100px;"><img style="width: 400px; height: 100px; max-width: 400px; max-height: 100px;"></div>
+							</td></tr></td></tr></td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			

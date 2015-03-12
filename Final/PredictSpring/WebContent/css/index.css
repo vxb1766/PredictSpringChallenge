@@ -1,0 +1,129 @@
+body{
+
+}
+
+.container{
+	margin-top: 10px;
+}
+.palletArea{
+	margin-right:20px;
+}
+.palletArea .palletCell{
+	margin-bottom: 10px;
+}
+.palletArea .palletCell,.palletArea .palletCell .palletCellImage{
+	width : 50px;
+	height : 50px;
+}
+
+
+
+
+.layoutArea .row{
+	margin-bottom : 10px;
+}
+
+.layoutArea .layoutCell{
+	border-style:inset;
+	/*width : 100px;
+	height : 100px;
+	overflow: hidden;*/
+}
+
+.layoutArea .layoutCellImage{
+	width : inherit;
+	height : inherit;
+}
+
+/*Overriding the bootstrap default*/
+.input-group-addon, .input-group-btn{
+	width : auto;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.options, .splitChoice{
+	float : left;
+}
+
+/*Modal Css*/
+#Error-Modal,#Success-Modal,#modal-example{
+	margin: 3%;	
+	width : 50%;
+	left: 30%;
+	top: 15%;
+	bottom: 20%;
+	border-color: black;
+	max-height: 400px;
+}
+
+.redThumbsDown{
+	color : #B74934;
+}
+#modal-example .col-sm-3{
+	left: 5%;
+	margin-top: 5%;
+}
+
+#modal-example .col-sm-9{
+	left: 5%;
+	max-height: 300px;	
+	overflow: auto;
+
+}
+
+/*Green ThumbsUP*/
+.greenThumbsUp{
+	color: #263C07;
+}
+
+
+.actionArea	.showLoadOption{
+	visibility : visible;
+}
+
+.actionArea	.hideLoadOption{
+	visibility : hidden;
+}
+
+/*This is From Radio Button Glyphicons*/
+
+.btn span.glyphicon {    			
+	opacity: 0;				
+}
+.btn.active span.glyphicon {				
+	opacity: 1;				
+}
+
+
+		table{
+			max-width: 400px;
+			max-height: 400px;
+		}
+		tr{
+			max-width: 400px;
+			max-height: 400px;
+		}
+		tr{
+			width : 100%;
+			height : 100%;
+			overflow: hidden;
+		}
+
+		td{
+			overflow: hidden;
+		}
+
+		td img{
+			width : 100%;
+		}
+
+		td tr{
+			height : 100%;
+		}
+
+		.imageHolder{
+			width: 400px;
+			height : 400px;
+		}
+

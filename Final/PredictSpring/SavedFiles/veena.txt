@@ -1,0 +1,23 @@
+
+				<table class="col-md-9">
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><td style="width: 200px; height: 400px; max-width: 200px; max-height: 400px;" class="test layoutCell" data-width="200" data-height="400"><tr style="max-width: 200px; width: 200px; height: 200px;"><td style="width: 200px; height: 200px; max-width: 200px; max-height: 200px;" class="test layoutCell" data-width="200" data-height="200" draggable="true"><div style="width: 200px; height: 200px; max-width: 200px; max-height: 200px;" class="layoutCell"><img style="width: 200px; height: 200px; max-width: 200px; max-height: 200px;" src="http://api.randomuser.me/portraits/women/51.jpg"></div></td></tr><tr style="max-height: 200px; width: 200px; height: 200px;"><td style="width: 200px; height: 200px; max-width: 200px; max-height: 200px;" class="test layoutCell" data-width="200" data-height="200" draggable="true"><div style="width: 200px; height: 200px; max-width: 200px; max-height: 200px;" class="layoutCell"><img style="width: 200px; height: 200px; max-width: 200px; max-height: 200px;" src="http://api.randomuser.me/portraits/men/52.jpg"></div></td></tr></td><td style="width: 200px; height: 400px; max-width: 200px; max-height: 400px;" class="test layoutCell" data-width="200" data-height="400" draggable="true"><div style="width: 200px; height: 400px; max-width: 200px; max-height: 400px;" class="layoutCell" draggable="true"><img style="width: 200px; height: 400px; max-width: 200px; max-height: 400px;" src="http://api.randomuser.me/portraits/women/55.jpg"></div></td></td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img src="http://api.randomuser.me/portraits/men/52.jpg" class="layoutCellImage"></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="test layoutCell" data-width="400" data-height="400" draggable="true"><div class="imageHolder"><img></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
